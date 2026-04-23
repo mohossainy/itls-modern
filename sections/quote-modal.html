@@ -1,0 +1,32 @@
+<div class="modal fade" id="quoteModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4">
+            <div class="modal-header bg-dark text-white p-4">
+                <h5 class="modal-title fw-bold" data-en="Freight Inquiry Form" data-ar="نموذج استفسار الشحن">Freight Inquiry Form</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4 p-md-5">
+                <div id="quote-success" class="alert alert-success d-none text-center">
+                    <i class="fas fa-check-circle fs-1 mb-2"></i>
+                    <h4 data-en="Success!" data-ar="تم بنجاح!">Success!</h4>
+                    <p data-en="Redirecting to WhatsApp..." data-ar="جارٍ توجيهك للواتساب...">Redirecting...</p>
+                </div>
+                <form id="quote-form" class="row g-3">
+                    <div class="col-md-6"><label class="form-label fw-bold">Name / الاسم</label><input type="text" name="name" class="form-control" required></div>
+                    <div class="col-md-6"><label class="form-label fw-bold">Phone / الهاتف</label><input type="tel" name="phone" class="form-control" required></div>
+                    <div class="col-md-6"><label class="form-label fw-bold">Service / الخدمة</label>
+                        <select name="service_type" class="form-select">
+                            <option value="Air Freight">Air Freight | جوي</option>
+                            <option value="Sea Freight">Sea Freight | بحري</option>
+                            <option value="Land Freight">Land Freight | بري</option>
+                            <option value="Vessel Chartering">Vessel Chartering | تأجير سفن</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6"><label class="form-label fw-bold">Email / البريد</label><input type="email" name="email" class="form-control" required></div>
+                    <div class="col-12"><label class="form-label fw-bold">Details / التفاصيل</label><textarea name="cargo_details" class="form-control" rows="3" required></textarea></div>
+                    <button type="submit" id="submit-btn" class="btn btn-orange w-100 py-3 mt-4 fs-5 fw-bold shadow">SEND TO iTLS</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
