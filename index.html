@@ -107,11 +107,11 @@
     <div id="gallery"></div>
     <div id="contact"></div>
     <div id="footer"></div>
-    <div id="quote-modal"></div>
+    <div id="quote-modal-placeholder"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // 1. محرك تحميل الأقسام
+    // وظيفة التحميل
     async function loadAllSections() {
         const sections = [
             { id: 'hero', path: 'sections/hero.html' },
@@ -122,7 +122,8 @@
             { id: 'why', path: 'sections/why.html' },
             { id: 'gallery', path: 'sections/gallery.html' },
             { id: 'contact', path: 'sections/contact.html' },
-            { id: 'footer', path: 'sections/footer.html' }
+            { id: 'footer', path: 'sections/footer.html' },
+            { id: 'quote-modal-placeholder', path: 'sections/quote_modal.html' } // أضفناه هنا
         ];
 
         for (const section of sections) {
@@ -133,11 +134,11 @@
                     const target = document.getElementById(section.id);
                     if (target) target.innerHTML = html;
                 }
-            } catch (error) { console.error('Error:', section.id, error); }
+            } catch (error) { console.error('Error:', error); }
         }
     }
 
-    // 2. وظيفة تبديل اللغة (تأكد أنها هنا لكي تعمل)
+    // وظيفة تبديل اللغة (يجب أن تظل هنا لتعمل الأزرار)
     function toggleLanguage() {
         const htmlTag = document.getElementById('html-tag');
         const langText = document.getElementById('lang-text');
@@ -153,13 +154,12 @@
             langText.innerText = 'العربية';
         }
 
-        // تحديث كافة النصوص التي تحمل data-en و data-ar
         document.querySelectorAll('[data-en]').forEach(el => {
             el.innerText = isEn ? el.getAttribute('data-ar') : el.getAttribute('data-en');
         });
     }
 
-    // تشغيل المحرك عند تحميل الصفحة
+    // تشغيل كل شيء عند فتح الصفحة
     window.addEventListener('DOMContentLoaded', loadAllSections);
 </script>
 </body>
