@@ -3,114 +3,41 @@
 <head>
     <meta name="google-site-verification" content="DqrKmQX0NJNrnGZJsPvZYDnOWBkL6923EilXRvdmHIg" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2RDJKM4FK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-M2RDJKM4FK');
-    </script>
+<script>
+    // وظيفة احترافية تضمن تحميل الأقسام بالترتيب الصحيح
+    async function loadAllSections() {
+        const sections = [
+            { id: 'hero', path: 'sections/hero.html' },
+            { id: 'about', path: 'sections/about.html' },
+            { id: 'services', path: 'sections/services.html' },
+            { id: 'blog-placeholder', path: 'sections/blog_section.html' },
+            { id: 'trading', path: 'sections/trading.html' },
+            { id: 'why', path: 'sections/why.html' },
+            { id: 'gallery', path: 'sections/gallery.html' },
+            { id: 'contact', path: 'sections/contact.html' },
+            { id: 'footer', path: 'sections/footer.html' }
+        ];
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>iTLS Logistics Dubai | Global Shipping & Trading Solutions</title>
-    <meta name="description" content="iTLS Logistics provides expert shipping, air freight, and global trading solutions in Dubai. Reliable logistics services tailored for your business growth.">
-    <meta name="keywords" content="Logistics Dubai, Shipping Company, Air Freight, Sea Freight, Global Trading, iTLS Dubai">
-
-    <meta property="og:title" content="iTLS Logistics Dubai - Your Global Partner">
-    <meta property="og:description" content="Leading logistics and trading services in the heart of Dubai.">
-    <meta property="og:image" content="img/logo.png">
-    <meta property="og:url" content="https://itlslogisticsdubai.netlify.app/">
-    <link rel="canonical" href="https://itls-dxb.onrender.com" />
-
-    <link rel="icon" type="image/png" href="tls logo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
-
-<body>
-    <a href="https://wa.me/971562933289" class="float-btn whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+971562933289" class="float-btn phone-float"><i class="fas fa-phone-alt"></i></a>
-
-    <div class="bg-light py-2 border-bottom">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="small fw-bold text-muted d-none d-md-block" data-en="Dubai's Premier Logistics & Trading Hub" data-ar="مركز دبي الرائد للخدمات اللوجستية والتجارة">Dubai's Premier Logistics & Trading Hub</div>
-            <button class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-bold shadow-sm" onclick="toggleLanguage()">
-                <i class="fas fa-globe me-1"></i> <span id="lang-text">العربية</span>
-            </button>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="tls logo.png" alt="iTLS Dubai Logo" style="height: 70px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="#" data-en="HOME" data-ar="الرئيسية">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about" data-en="ABOUT" data-ar="من نحن">ABOUT</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-en="SERVICES" data-ar="خدماتنا">SERVICES</a>
-                        <ul class="dropdown-menu border-0 shadow" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item fw-bold" href="#air-freight" data-en="Air Freight" data-ar="الشحن الجوي">Air Freight</a></li>
-                            <li><a class="dropdown-item fw-bold" href="#sea-freight" data-en="Sea Freight" data-ar="الشحن البحري">Sea Freight</a></li>
-                            <li><a class="dropdown-item fw-bold" href="#land-freight" data-en="Land Freight" data-ar="الشحن البري">Land Freight</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item fw-bold" href="#vessel-chartering" data-en="Vessel Chartering" data-ar="تأجير السفن">Vessel Chartering</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-primary fw-bold" href="#trading" data-en="TRADING" data-ar="التجارة">TRADING</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery" data-en="GALLERY" data-ar="المعرض">GALLERY</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#why-us" data-en="WHY iTLS" data-ar="لماذا نحن">WHY iTLS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog" data-en="BLOG" data-ar="المدونة">BLOG</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" data-en="CONTACT" data-ar="اتصل بنا">CONTACT</a></li>
-                </ul>
-                <button class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#quoteModal" data-en="GET A QUOTE" data-ar="طلب عرض سعر">GET A QUOTE</button>
-            </div>
-        </div>
-    </nav>
-
-    <div id="hero"></div>
-    <div id="about"></div>
-    <div id="services"></div>
-    <div id="blog-placeholder"></div> <div id="trading"></div>
-    <div id="why"></div>
-    <div id="gallery"></div>
-    <div id="contact"></div>
-    <div id="footer"></div>
-    <div id="quote-modal-placeholder"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // المحرك الموحد لتحميل الأقسام بذكاء
-        function loadSection(id, path) {
-            fetch(path)
-                .then(response => {
-                    if (!response.ok) throw new Error('Failed to load: ' + path);
-                    return response.text();
-                })
-                .then(data => {
-                    const el = document.getElementById(id);
-                    if(el) el.innerHTML = data;
-                })
-                .catch(error => console.error('Section Load Error:', error));
+        for (const section of sections) {
+            try {
+                const response = await fetch(section.path);
+                if (response.ok) {
+                    const html = await response.text();
+                    const target = document.getElementById(section.id);
+                    if (target) {
+                        target.innerHTML = html;
+                    }
+                } else {
+                    console.warn(`Could not load: ${section.path}`);
+                }
+            } catch (error) {
+                console.error(`Error in ${section.id}:`, error);
+            }
         }
+    }
 
-        // استدعاء الأقسام من مجلد sections
-        loadSection('hero', 'sections/hero.html');
-        loadSection('about', 'sections/about.html');
-        loadSection('services', 'sections/services.html');
-        loadSection('blog', 'sections/blog_section.html');
-        loadSection('trading', 'sections/trading.html');
-        loadSection('why', 'sections/why.html');
-        loadSection('gallery', 'sections/gallery.html');
-        loadSection('contact', 'sections/contact.html');
-        loadSection('footer', 'sections/footer.html');
-        loadSection('quote-modal-placeholder', 'sections/quote_modal.html');
-    </script>
+    // تشغيل المحرك بمجرد تحميل الصفحة
+    window.addEventListener('DOMContentLoaded', loadAllSections);
+</script>
 </body>
 </html>
