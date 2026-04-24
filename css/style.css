@@ -80,4 +80,6 @@ body { font-family: 'Segoe UI', Roboto, sans-serif; color: #333; overflow-x: hid
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 20px;
-}
+}git add .
+git commit -m "Fix services layout and images"
+git push
