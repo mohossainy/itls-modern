@@ -110,8 +110,8 @@
     <div id="quote-modal"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   <script>
-    // وظيفة احترافية تضمن تحميل الأقسام بالترتيب الصحيح
+  <script>
+    // 1. محرك تحميل الأقسام
     async function loadAllSections() {
         const sections = [
             { id: 'hero', path: 'sections/hero.html' },
@@ -131,19 +131,35 @@
                 if (response.ok) {
                     const html = await response.text();
                     const target = document.getElementById(section.id);
-                    if (target) {
-                        target.innerHTML = html;
-                    }
-                } else {
-                    console.warn(`Could not load: ${section.path}`);
+                    if (target) target.innerHTML = html;
                 }
-            } catch (error) {
-                console.error(`Error in ${section.id}:`, error);
-            }
+            } catch (error) { console.error('Error:', section.id, error); }
         }
     }
 
-    // تشغيل المحرك بمجرد تحميل الصفحة
+    // 2. وظيفة تبديل اللغة (تأكد أنها هنا لكي تعمل)
+    function toggleLanguage() {
+        const htmlTag = document.getElementById('html-tag');
+        const langText = document.getElementById('lang-text');
+        const isEn = htmlTag.getAttribute('lang') === 'en';
+
+        if (isEn) {
+            htmlTag.setAttribute('lang', 'ar');
+            htmlTag.setAttribute('dir', 'rtl');
+            langText.innerText = 'English';
+        } else {
+            htmlTag.setAttribute('lang', 'en');
+            htmlTag.setAttribute('dir', 'ltr');
+            langText.innerText = 'العربية';
+        }
+
+        // تحديث كافة النصوص التي تحمل data-en و data-ar
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.innerText = isEn ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        });
+    }
+
+    // تشغيل المحرك عند تحميل الصفحة
     window.addEventListener('DOMContentLoaded', loadAllSections);
 </script>
 </body>
