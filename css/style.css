@@ -92,18 +92,33 @@ git push
 }
 
 /* زر عرض السعر العائم الجديد */
-.quote-float {
-    bottom: 165px; /* يظهر فوق زر الهاتف */
-    background: var(--main-orange);
-    font-size: 20px;
+.quote-float-btn {
+    position: fixed;
+    bottom: 155px; /* فوق زر الهاتف والواتساب */
+    right: 20px;
+    background-color: var(--main-orange);
+    color: white;
     border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* تعديل المسافات للأزرار العائمة لتناسب الجوال */
+.quote-float-btn:hover {
+    transform: scale(1.05);
+    background-color: #e67e22;
+}
+
 @media (max-width: 768px) {
-    .nav-link { font-size: 0.9rem !important; margin: 10px 0 !important; }
-    .float-btn { width: 50px; height: 50px; right: 15px; }
-    .whatsapp-float { bottom: 15px; }
-    .phone-float { bottom: 75px; }
-    .quote-float { bottom: 135px; }
+    .quote-float-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+        bottom: 140px;
+    }
 }
