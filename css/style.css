@@ -66,20 +66,3 @@ body { font-family: 'Segoe UI', Roboto, sans-serif; color: #333; overflow-x: hid
     background-color: var(--main-orange);
     color: white;
 }
-.service-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* يضمن عدم تشوه الصورة */
-    border-radius: 15px 15px 0 0;
-}
-
-.service-card {
-    display: flex;
-    flex-direction: column;
-    padding: 0; /* أزلنا البادنج القديم لكي تلتصق الصورة بالحواف */
-    overflow: hidden;
-}
-
-.service-content {
-    padding: 25px;
-}
