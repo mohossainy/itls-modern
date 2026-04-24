@@ -66,3 +66,18 @@ body { font-family: 'Segoe UI', Roboto, sans-serif; color: #333; overflow-x: hid
     background-color: var(--main-orange);
     color: white;
 }
+/* تحسين مظهر فقرات الخدمات دون المساس بالصور */
+.services-section .text-muted {
+    line-height: 1.8;
+    font-size: 1.1rem !important;
+    color: #444 !important;
+    max-width: 90%;
+}
+
+.services-section h4 {
+    color: var(--main-blue);
+    border-bottom: 2px solid var(--main-orange);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
